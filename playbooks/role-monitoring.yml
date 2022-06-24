@@ -14,7 +14,11 @@
           - "not no_ansible.stat.exists"
         success_msg: "We are able to run on this node"
         fail_msg: "/etc/no-ansible exists - skipping run on this node"
-        
+ 
+    - name: Install SELinux packages
+      package:
+        name: python3-policycoreutils.noarch
+        state: present        
 
   roles:
     - role: cloudalchemy.prometheus
