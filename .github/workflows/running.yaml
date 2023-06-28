@@ -22,4 +22,7 @@ jobs:
       - name: Ansible CLI
         uses: tomasnorre/ansible-cli-client@0.0.2
         with:
-          command: ansible-playbook -h
+          command: |
+            ansible-galaxy collection install -r collections/requirements.yml
+            ansible-galaxy role install -r roles/requirements.yml
+            ansible-playbook playbooks/role-monitoring.yml
