@@ -17,7 +17,7 @@ jobs:
         uses: tomasnorre/ansible-cli-client@0.0.2
         with:
           command: |
-            ls -altr
-            ansible-galaxy collection install -r collections/requirements.yml
-            ansible-galaxy role install -r roles/requirements.yml
-            ansible-playbook playbooks/role-monitoring.yml
+            ls -altr && \
+            ansible-galaxy collection install -r collections/requirements.yml && \
+            ansible-galaxy role install -r roles/requirements.yml && \
+            ansible-playbook playbooks/role-monitoring.yml \
