@@ -1,0 +1,18 @@
+---
+- name: Setup ansible environment
+  hosts: localhost
+  pre_tasks:
+    - name: Install Galaxy Collections
+      ansible.builtin.command: >
+        ansible-galaxy collection install -r collections/requirements.yml
+      changed_when: false
+      args:
+        chdir: "{{ ansible_config_file | dirname }}"
+    - name: Install Galaxy Roles
+      ansible.builtin.command: >
+        ansible-galaxy role install -r roles/requirements.yml
+      changed_when: false
+      args:
+        chdir: "{{ ansible_config_file | dirname }}"
+
+...
