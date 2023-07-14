@@ -16,5 +16,4 @@ jobs:
       - name: Ansible CLI
         uses: tomasnorre/ansible-cli-client@0.0.2
         with:
-          command: |
-            playbooks/adhoc/setup-environment.yml
+          command: ansible-playbook playbooks/adhoc/setup-environment.yml
