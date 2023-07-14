@@ -17,5 +17,4 @@ jobs:
         uses: tomasnorre/ansible-cli-client@0.0.2
         with:
           command: |
-            ansible-playbook playbooks/adhoc/setup-environment.yml \
-            ansible-playbook playbooks/role-monitoring.yml
+            playbooks/adhoc/setup-environment.yml
